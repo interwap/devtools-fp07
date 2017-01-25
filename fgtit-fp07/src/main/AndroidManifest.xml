@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.praescient.components.fgtit_fp07">
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <!-- The USB connection specifies the class that receives the broadcast -->
+        <receiver android:name="com.praescient.components.fgtit_fp07.service.UsbBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="NotifyUsbStartNet" />
+                <action android:name="NotifyUsbStopNet" />
+            </intent-filter>
+        </receiver>
+
+        <!-- USB Virtual Network Specifies the com.praescient.service class -->
+        <service android:name="com.praescient.components.fgtit_fp07.service.ConnectService" >
+        </service>
+
+    </application>
+
+</manifest>
